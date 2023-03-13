@@ -14,7 +14,13 @@ def encoder(password):
 
 
 def decoder(encoded_password):
-    pass
+    # decode an 8-digit password by shifting each digit down by 3 numbers
+    decoded_password = ""
+    for digit in encoded_password:  # subtracts 3 from each digit, makes it positive if
+        decoded_digit = str((int(digit) - 3) % 10)
+        decoded_password += decoded_digit
+    return decoded_password
+
 
 
 def menu():
